@@ -41,6 +41,7 @@ app.use(compress()); // 开启压缩
 app.get(
   "/",
   handleErrors(async function (req, res) {
+    // 轮训判断webpack的打包结果已经存在
     await waitForWebpack();
     render(req.url, res);
   })

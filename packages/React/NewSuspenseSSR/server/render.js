@@ -35,7 +35,7 @@ module.exports = function render(url, res) {
       <App assets={assets} />
     </DataProvider>,
     {
-      bootstrapScripts: [assets["main.js"]],
+      bootstrapScripts: [assets["main.js"]], // 打包的入口文件 异步加载
       onShellReady() {
         // If something errored before we started streaming, we set the error code appropriately.
         res.statusCode = didError ? 500 : 200;

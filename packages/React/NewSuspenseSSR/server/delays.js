@@ -13,7 +13,7 @@
 exports.API_DELAY = 2000;
 
 // How long the server waits for data before giving up.
-// 服务器在放弃之前等待数据的时间
+// 服务器在放弃之前等待数据的时间 超时时长
 exports.ABORT_DELAY = 10000;
 
 // How long serving the JS bundles is delayed.
