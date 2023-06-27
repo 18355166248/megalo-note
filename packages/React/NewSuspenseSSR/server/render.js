@@ -30,6 +30,7 @@ module.exports = function render(url, res) {
   });
   let didError = false;
   const data = createServerData();
+  // renderToPipeableStream 不会影响 SusPence 组件内的正常渲染 除非数据是异步获取的
   const stream = renderToPipeableStream(
     <DataProvider data={data}>
       <App assets={assets} />
@@ -44,7 +45,10 @@ module.exports = function render(url, res) {
       },
       onError(x) {
         didError = true;
-        console.error(x);
+        console.error("报错了", x);
+      },
+      onAllReady() {
+        console.log("全部加载完成");
       },
     }
   );
@@ -75,6 +79,8 @@ function createServerData() {
           resolve();
         }, API_DELAY);
       });
+      // 这里 throw 直接报错 也就是为了在服务端渲染的时候 这个地方的组件不会正确渲染 会渲染
+      // SusPence 的 fallback
       throw promise;
     },
   };

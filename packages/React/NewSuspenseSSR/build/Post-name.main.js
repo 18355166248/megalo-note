@@ -1,18 +1,19 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+"use strict";
+(self["webpackChunknew_suspense_ssr"] = self["webpackChunknew_suspense_ssr"] || []).push([["Post-name"],{
 
 /***/ "./src/Post.js":
 /*!*********************!*\
   !*** ./src/Post.js ***!
   \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Post; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Post),
+/* harmony export */   getName: () => (/* binding */ getName)
+/* harmony export */ });
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/.pnpm/react@18.2.0/node_modules/react/jsx-dev-runtime.js");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "E:\\Studying\\Code\\megalo-note\\packages\\React\\NewSuspenseSSR\\src\\Post.js";
+var _jsxFileName = "/Users/xmly/Study/code/megalo-note/packages/React/NewSuspenseSSR/src/Post.js";
 
 
 /**
@@ -24,21 +25,21 @@ var _jsxFileName = "E:\\Studying\\Code\\megalo-note\\packages\\React\\NewSuspens
  */
 
 function Post() {
-  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h1", {
+  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("h1", {
       children: "Hello world"
     }, void 0, false, {
       fileName: _jsxFileName,
       lineNumber: 12,
       columnNumber: 7
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("p", {
-      children: ["This demo is ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("b", {
+    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
+      children: ["This demo is ", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("b", {
         children: "artificially slowed down"
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 14,
         columnNumber: 22
-      }, this), ". Open", " ", /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("code", {
+      }, this), ". Open", " ", /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("code", {
         children: "server/delays.js"
       }, void 0, false, {
         fileName: _jsxFileName,
@@ -49,13 +50,13 @@ function Post() {
       fileName: _jsxFileName,
       lineNumber: 13,
       columnNumber: 7
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("p", {
+    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
       children: "Notice how HTML for comments \"streams in\" before the JS (or React) has loaded on the page."
     }, void 0, false, {
       fileName: _jsxFileName,
       lineNumber: 18,
       columnNumber: 7
-    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("p", {
+    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("p", {
       children: "Also notice that the JS for comments and sidebar has been code-split, but HTML for it is still included in the server output."
     }, void 0, false, {
       fileName: _jsxFileName,
@@ -64,8 +65,11 @@ function Post() {
     }, this)]
   }, void 0, true);
 }
+function getName(params) {
+  return params + "111";
+}
 
 /***/ })
 
 }]);
-//# sourceMappingURL=1.main.js.map
+//# sourceMappingURL=Post-name.main.js.map

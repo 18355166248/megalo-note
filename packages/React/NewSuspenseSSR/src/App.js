@@ -13,9 +13,13 @@ import Spinner from "./Spinner";
 import Layout from "./Layout";
 import NavBar from "./NavBar";
 
-const Comments = lazy(() => import("./Comments" /* webpackPrefetch: true */));
+const Comments = lazy(() => import("./Comments"));
 const Sidebar = lazy(() => import("./Sidebar" /* webpackPrefetch: true */));
-const Post = lazy(() => import("./Post" /* webpackPrefetch: true */));
+const Post = lazy(() =>
+  import(
+    "./Post" /* webpackPrefetch: true,webpackChunkName: "Post-name", webpackExports: ["default", "getName"]  */
+  )
+);
 
 export default function App({ assets }) {
   return (
@@ -57,7 +61,7 @@ function Content() {
 function Error({ error }) {
   return (
     <div>
-      <h1>Application Error</h1>
+      <h1>Application Error 出错了...</h1>
       <pre style={{ whiteSpace: "pre-wrap" }}>{error.stack}</pre>
     </div>
   );

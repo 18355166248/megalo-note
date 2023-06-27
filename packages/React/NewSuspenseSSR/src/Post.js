@@ -26,3 +26,7 @@ export default function Post() {
     </>
   );
 }
+
+export function getName(params) {
+  return params + "111";
+}

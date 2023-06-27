@@ -25,6 +25,8 @@ export default function Html({ assets, children, title }) {
         {children}
         <script
           dangerouslySetInnerHTML={{
+            // 这里会在服务端的时候讲assets绑定到window上
+            // 会在客户端渲染的时候拿到通过入口通过 window传入进来
             __html: `assetManifest = ${JSON.stringify(assets)};`,
           }}
         />
