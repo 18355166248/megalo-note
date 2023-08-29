@@ -2,8 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const { parse } = require("@babel/parser");
 const traverse = require("@babel/traverse").default;
+const babel = require("@babel/core");
 
-let ID = 10;
+let ID = 1;
 
 const config = require("./mini-webpack.config");
 
@@ -14,7 +15,11 @@ function init() {
 }
 
 function collectDependencies(filename) {
-  const absPath = path.resolve(__dirname, filename);
+  let absPath = path.resolve(__dirname, filename);
+
+  if (absPath.lastIndexOf(".ts") === -1) {
+    absPath += ".ts";
+  }
   const entryContent = fs.readFileSync(absPath, "utf-8");
 
   const dependencies = [];
@@ -30,6 +35,14 @@ function collectDependencies(filename) {
     },
   });
 
+  const { code } = babel.transformFromAstSync(ast, null, {
+    presets: ["@babel/preset-env"],
+  });
+  console.log(
+    "🚀 ~ file: mini-webpack.js:41 ~ collectDependencies ~ code:",
+    code
+  );
+
   const id = ID++;
 
   return {
@@ -41,10 +54,7 @@ function collectDependencies(filename) {
 
 function createDependGraph(mainAsset) {
   const allAsset = [mainAsset];
-  console.log(
-    "🚀 ~ file: mini-webpack.js:42 ~ createDependGraph ~ allAsset:",
-    allAsset
-  );
+
   let i = 0;
 
   while (allAsset.length > i) {
@@ -53,7 +63,7 @@ function createDependGraph(mainAsset) {
     const dirname = path.dirname(asset.filename);
     asset.mapping = {};
     asset.dependencies.forEach((relativePath) => {
-      const absPath = path.resolve(dirname, relativePath);
+      const absPath = path.join(dirname, relativePath);
       let childAsset = collectDependencies(absPath);
       asset.mapping[relativePath] = childAsset.id;
       allAsset.push(childAsset);

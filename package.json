@@ -12,6 +12,7 @@
     "wsrun": "^5.2.4"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.22.10",
     "chalk": "4"
   }
 }
