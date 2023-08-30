@@ -7,10 +7,5 @@
   "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@babel/core": "^7.22.11",
-    "@babel/parser": "^7.22.13",
-    "@babel/traverse": "^7.22.11"
-  }
+  "license": "ISC"
 }

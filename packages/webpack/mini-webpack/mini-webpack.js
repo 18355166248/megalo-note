@@ -47,6 +47,7 @@ function collectDependencies(filename) {
 
   const dependencies = [];
 
+  // 转成 ast 获取 import 依赖
   const ast = parse(entryContent, {
     sourceType: "module",
     plugins: ["typescript"],
@@ -56,7 +57,7 @@ function collectDependencies(filename) {
       dependencies.push(node.source.value);
     },
   });
-
+  // 将 ast 转成代码
   const { code } = babel.transformFromAstSync(ast, null, {
     presets: ["@babel/preset-env", "@babel/preset-typescript"],
     filename: "*.ts",

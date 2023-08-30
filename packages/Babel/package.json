@@ -1,0 +1,12 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "- [Babel 手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)",
+  "main": "index.js",
+  "scripts": {
+    "babel-file": "babel --extensions .ts,.js,.jsx src/Demo -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
