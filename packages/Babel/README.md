@@ -58,6 +58,12 @@ Babel 应用: 利用 @babel/register 实现即时编译（在 Node 环境下使�
 
 看例子可以看到我们通过 @babel/core 可以将代码转化成我们配置的兼容性代码
 
+### @babel/preset-env
+
+最重要的一个功能就是提供不同浏览器支持特性的数据来源
+
+这里也有详细的介绍 [core-js-3-babel](https://github.com/zloirock/core-js/blob/master/docs/zh_CN/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md)
+
 ### @babel/preset-react
 
 我们可以解析 react 组件
@@ -88,7 +94,15 @@ Babel 应用: 利用 @babel/register 实现即时编译（在 Node 环境下使�
 
 ### @babel/plugin-transform-runtime
 
-节约打包代码量
+节约打包代码量 用于构建过程的代码转换
+
+### @babel/runtime
+
+节约打包代码量 实际导入项目代码的功能模块
+
+我们可以这么理解, @babel/plugin-transform-runtime 是一个使用工具的人, @babel/runtime 是一个工具, 我们让使用工具的人对代码使用工具
+
+也就是说让 @babel/plugin-transform-runtime 针对代码做转换, 转换后的代码用的就是 @babel/runtime
 
 ### @babel/parser
 
@@ -128,4 +142,33 @@ const location = {
 > 4 |   }
     | ^^^
   5 | }
+```
+
+### @babel/template
+
+babel 模板功能, 支持动态替换字符串
+
+#### [例子](https://github.com/18355166248/megalo-note/tree/main/packages/Babel/src/babel-template.js)
+
+### @babel/traverse
+
+模块维护整个树状态，并负责替换、删除和添加节点。
+
+```js
+import parser from "@babel/parser";
+import traverse from "@babel/traverse";
+
+const code = `function square(n) {
+  return n * n;
+}`;
+
+const ast = parser.parse(code);
+// 解析 ast
+traverse(ast, {
+  enter(path) {
+    if (path.node.type === "Identifier" && path.node.name === "n") {
+      path.node.name = "x";
+    }
+  },
+});
 ```

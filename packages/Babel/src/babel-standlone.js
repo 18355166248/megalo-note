@@ -34,3 +34,4 @@ code = code.replace("exports.App =", "return");
 console.log("🚀 ~ file: babel-standlone.js:34 ~ code:", code);
 const res = new Function("require,exports ", code)(require, exports);
 console.log("🚀 ~ file: babel-standlone.js:34 ~ customComponents:", res);
+
